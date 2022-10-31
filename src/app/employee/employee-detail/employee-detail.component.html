@@ -1,1 +1,36 @@
-<p>employee-detail works!</p>
+<div id ="componenet">
+    <app-head [pageTitle]="pageTitle"></app-head>          <!-- The pagetitle is set in the OnInit in the ts file-->
+
+    <main id=""main>
+        <table class="table table-striped" *ngIf="emp">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td><input [(ngModel)]="emp.id" type="number" disabled></td>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td><input [(ngModel)]="emp.name" type="text" [disabled]="IsDetailPage"></td>
+                </tr>
+                    <tr>
+
+                        <th>Email</th>
+                        <td><input [(ngModel)]="emp.email" type="email" [disabled]="IsDetailPage"></td>
+                    </tr>
+                    <tr>
+                        <th>Admin</th>
+                        <td><input [(ngModel)]="emp.email" type="checkbox" [disabled]="IsDetailPage"></td>
+                    </tr>
+                    <tr>
+                        <th>Expenses Due</th>
+                        <td><input [(ngModel)]="emp.expensesDue" type="number" disabled></td>
+                    </tr>
+                    <tr>
+                        <th>Expenses Paid</th>
+                        <td><input [(ngModel)]="emp.expensesPaid" type="number" disabled></td>
+                    </tr>
+                    
+            </tbody>
+        </table>
+        </main>
+</div>
