@@ -20,9 +20,9 @@
                     <td style="text-transform: capitalize;">{{e.name}}</td>
                     <td>{{e.email}}</td>
                     <td style="text-transform: capitalize;">{{e.admin}}</td>
-                    <td>{{e.expensesDue}}</td>
-                    <td>{{e.expensesPaid}}</td>
-                    <td><a routerLink="/empl/detail/`${e.id}`">Detail</a> | <a routerLink="/empl/change/`${e.id}">Edit</a></td>
+                    <td>{{e.expensesDue | currency}}</td>
+                    <td>{{e.expensesPaid | currency}}</td>
+                    <td><a routerLink="/empl/detail/{{e.id}}">Detail</a> | <a routerLink="/empl/change/{{e.id}}">Edit</a></td>
                 </tr>
             </tbody>
         </table>
