@@ -9,7 +9,11 @@ import { EmployeeService } from '../employee.service';
 })
 export class EmployeeListComponent implements OnInit {
 
+
+  pageTitle:string="Employee List"
+
   empls: Employee[]=[];
+
 
   constructor(
     private emplsvc: EmployeeService
