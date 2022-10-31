@@ -5,6 +5,6 @@ export class Employee{
     password:string="";
     admin:boolean=false;
     expensesDue:number=0;
-    expensePaid:number=0;
+    expensesPaid:number=0;
     
 }

@@ -5,10 +5,27 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Admin</th>
+                    <th>Expenses Due</th>
+                    <th>Expenses Paid</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
+            <tbody *ngFor="let e of empls">
+                <tr>
+                    <td>{{e.id}}</td>
+                    <td style="text-transform: capitalize;">{{e.name}}</td>
+                    <td>{{e.email}}</td>
+                    <td style="text-transform: capitalize;">{{e.admin}}</td>
+                    <td>{{e.expensesDue}}</td>
+                    <td>{{e.expensesPaid}}</td>
+                    <td><a routerLink="/empl/detail/`${e.id}`">Detail</a> | <a routerLink="/empl/change/`${e.id}">Edit</a></td>
+                </tr>
+            </tbody>
         </table>
-    </main>
+        </main>
 </div>
 
