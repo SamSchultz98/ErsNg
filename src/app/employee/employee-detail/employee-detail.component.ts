@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Employee } from '../employee.class';
 import { EmployeeService } from '../employee.service';
 
@@ -16,9 +16,26 @@ export class EmployeeDetailComponent implements OnInit {
   emp!: Employee;
   constructor(
     private emplsvc: EmployeeService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
     ) { }
+
+    showVerifyButton:boolean=false;
+    warning():void {
+      this.showVerifyButton = !this.showVerifyButton;
+    }
     
+    verifyDelete(): void{
+      this.emplsvc.remove(this.emp.id).subscribe({
+        next:(res)=>{
+          console.debug("Employee Deleted!")
+          this.router.navigateByUrl("/empl/list")
+        },
+        error:(err)=>{
+          console.error(err)
+        }
+      })
+    }
     ngOnInit(): void {
       let id = +this.route.snapshot.params["id"];
       this.emplsvc.get(id).subscribe({

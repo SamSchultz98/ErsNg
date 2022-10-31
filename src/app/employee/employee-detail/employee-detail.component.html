@@ -32,6 +32,10 @@
                     
             </tbody>
         </table>
+        <button (click)="warning()"class="btn btn-danger">Delete</button>
+        <span *ngIf="showVerifyButton">
+            | <button class="btn btn-danger"(click)="verifyDelete()">Verify Delete</button>
+        </span>
         <app-footer></app-footer>
         </main>
 </div>
