@@ -8,6 +8,12 @@ import { HomeComponent } from './misc/home/home.component';
 import { AboutComponent } from './misc/about/about.component';
 import { E404Component } from './misc/e404/e404.component';
 import { MenuComponent } from './misc/menu/menu.component';
+import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
+import { EmployeeDetailComponent } from './employee/employee-detail/employee-detail.component';
+import { EmployeeChangeComponent } from './employee/employee-change/employee-change.component';
+import { EmployeeDeleteComponent } from './employee/employee-delete/employee-delete.component';
+import { EmployeeCreateComponent } from './employee/employee-create/employee-create.component';
+import { HeadComponent } from './common/head/head.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +21,13 @@ import { MenuComponent } from './misc/menu/menu.component';
     HomeComponent,
     AboutComponent,
     E404Component,
-    MenuComponent
+    MenuComponent,
+    EmployeeListComponent,
+    EmployeeDetailComponent,
+    EmployeeChangeComponent,
+    EmployeeDeleteComponent,
+    EmployeeCreateComponent,
+    HeadComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
