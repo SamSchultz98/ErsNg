@@ -14,10 +14,24 @@ export class EmployeeListComponent implements OnInit {
 
   empls: Employee[]=[];
   searchCriteria: string= "";
+  sortColumn: string = "id"
+  sortAsc: boolean = false;
+
 
   constructor(
     private emplsvc: EmployeeService
   ) { }
+
+
+  sortBy(column: string): void {
+    console.debug(`sortBy(${column})`)
+    if(column === this.sortColumn){
+      this.sortAsc = !this.sortAsc;
+      return
+    }
+    this.sortColumn = column;
+    this.sortAsc = true;
+  }
 
   ngOnInit(): void {
     this.emplsvc.list().subscribe({
