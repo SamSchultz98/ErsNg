@@ -13,7 +13,7 @@ export class EmployeeListComponent implements OnInit {
   pageTitle:string="Employee List"
 
   empls: Employee[]=[];
-
+  searchCriteria: string= "";
 
   constructor(
     private emplsvc: EmployeeService

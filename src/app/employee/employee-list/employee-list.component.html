@@ -3,6 +3,9 @@
 
     <main id=""main>
         <button class="btn btn-secondary"><a routerLink="/empl/create" style="color: silver;">Create New</a></button>
+        |
+        <input [(ngModel)] = "searchCriteria" placeholder="Search" style="border-style: hidden">
+        <!-- <button class="btn btn-primary" style="border-radius: 50px; size: 50px;">Search</button> -->
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -15,8 +18,8 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody *ngFor="let e of empls">
-                <tr>
+            <tbody >
+                <tr *ngFor="let e of empls | employeeSearch:searchCriteria">
                     <td>{{e.id}}</td>
                     <td style="text-transform: capitalize;">{{e.name}}</td>
                     <td>{{e.email}}</td>
