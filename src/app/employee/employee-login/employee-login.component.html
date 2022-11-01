@@ -1,0 +1,15 @@
+<div id="componenet">
+    <table>
+        <thead>
+            <th>Email</th>
+            <th>Password</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input [(ngModel)]="email"></td>
+                <td><input [(ngModel)]="password" type="password"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button clas="btn btn-primary"(click)="login()">login</button>
+</div>

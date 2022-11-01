@@ -15,6 +15,7 @@ import { EmployeeDeleteComponent } from './employee/employee-delete/employee-del
 import { EmployeeCreateComponent } from './employee/employee-create/employee-create.component';
 import { HeadComponent } from './common/head/head.component';
 import { FooterComponent } from './common/footer/footer.component';
+import { EmployeeLoginComponent } from './employee/employee-login/employee-login.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FooterComponent } from './common/footer/footer.component';
     EmployeeDeleteComponent,
     EmployeeCreateComponent,
     HeadComponent,
-    FooterComponent
+    FooterComponent,
+    EmployeeLoginComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,

@@ -8,6 +8,7 @@ import { EmployeeDetailComponent } from './employee/employee-detail/employee-det
 import { EmployeeChangeComponent } from './employee/employee-change/employee-change.component';
 import { EmployeeDeleteComponent } from './employee/employee-delete/employee-delete.component';
 import { EmployeeCreateComponent } from './employee/employee-create/employee-create.component';
+import { EmployeeLoginComponent } from './employee/employee-login/employee-login.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/home", pathMatch:"full"},  //Always your first route
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: "empl/detail/:id", component:EmployeeDetailComponent},
   {path: "empl/change/:id", component:EmployeeChangeComponent},
   {path: "empl/delete/:id", component:EmployeeDeleteComponent},
+  {path:"empl/login", component:EmployeeLoginComponent},
   {path:"home", component: HomeComponent}, 
   {path:"about", component: AboutComponent},
 
