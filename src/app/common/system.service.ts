@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppInitService } from '../app-init.service';
 import { Employee } from '../employee/employee.class';
 
 @Injectable({
@@ -7,13 +8,14 @@ import { Employee } from '../employee/employee.class';
 })
 export class SystemService {
 
-  baseurl:string= "http://localhost:5112/api"
+  baseurl:string= this.appinit.config.baseurl;
   employee: any = null;
 
 
 
   constructor(
-    private router: Router
+    private router: Router,
+    private appinit: AppInitService
   ) { }
 
   chkLogin(): void {
