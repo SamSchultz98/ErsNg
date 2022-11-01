@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
@@ -19,6 +19,11 @@ import { EmployeeLoginComponent } from './employee/employee-login/employee-login
 import { BoolDisplayPipe } from './common/bool-display.pipe';
 import { EmployeeSearchPipe } from './employee/employee-search.pipe';
 import { SortPipe } from './common/sort.pipe';
+import { AppInitService } from './app-init.service';
+
+export function startupServiceFactory(appInit: AppInitService) : Function {   //A function passing in the factory for the init service. Causes the get settings to execute
+  return () => appInit.getSettings();
+}
 
 @NgModule({
   declarations: [
@@ -43,7 +48,14 @@ import { SortPipe } from './common/sort.pipe';
     BrowserModule, FormsModule, HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    AppInitService, {
+      provide: APP_INITIALIZER,
+      useFactory: startupServiceFactory,
+      deps: [AppInitService],
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

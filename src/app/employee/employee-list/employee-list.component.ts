@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SystemService } from 'src/app/common/system.service';
 import { Employee } from '../employee.class';
 import { EmployeeService } from '../employee.service';
 
@@ -19,7 +20,8 @@ export class EmployeeListComponent implements OnInit {
 
 
   constructor(
-    private emplsvc: EmployeeService
+    private emplsvc: EmployeeService,
+    private sys: SystemService
   ) { }
 
 
@@ -34,6 +36,7 @@ export class EmployeeListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.sys.chkLogin();
     this.emplsvc.list().subscribe({
       next: (res) => {
         console.debug("Employees:",res)
